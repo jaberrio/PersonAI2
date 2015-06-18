@@ -1,9 +1,13 @@
 package org.jaberrio.personai2;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,8 +16,34 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         //setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        FragmentManager fm = getFragmentManager();
+
+        FragmentTransaction fmtrans = fm.beginTransaction();
+
+        Toast configUpdates = Toast.makeText(getApplicationContext(), "Configuation Update", Toast.LENGTH_SHORT);
+        configUpdates.show();
+
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+
+            OverviewLand overviewLand = new OverviewLand();
+            fmtrans.replace(android.R.id.content,overviewLand);
+
+        }else{
+
+            OverviewPort overviewport = new OverviewPort();
+            fmtrans.replace(android.R.id.content,overviewport);
+        }
+
+        // Schedule for the replacement of the Fragment as soon as possible
+        fmtrans.commit();
+
     }
 
     @Override
