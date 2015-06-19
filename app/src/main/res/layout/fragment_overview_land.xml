@@ -33,7 +33,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/frameLayout"
         android:layout_alignStart="@+id/frameLayout"
-        android:layout_marginBottom="250dp">
+        android:layout_marginBottom="200dp"
+        android:id="@+id/frameLayout2">
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,21 +67,115 @@
 
         <ListView
             android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:id="@+id/listYes"
-            android:layout_gravity="center_vertical" />
-
-        <ListView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
+            android:layout_height="240dp"
             android:id="@+id/listTo"
-            android:layout_gravity="center" />
+            android:layout_gravity="center|bottom" />
 
         <ListView
             android:layout_width="160dp"
-            android:layout_height="200dp"
+            android:layout_height="240dp"
             android:id="@+id/listTom"
-            android:layout_gravity="right|center_vertical" />
+            android:layout_gravity="bottom|right" />
+
+        <ListView
+            android:layout_width="160dp"
+            android:layout_height="240dp"
+            android:id="@+id/listYes"
+            android:layout_gravity="left|bottom" />
     </FrameLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/frameLayout2"
+        android:layout_toStartOf="@+id/frameLayout2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament0"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament1"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament2"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament3"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament4"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament5"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament6"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="116dp"
+                android:text="New Button"
+                android:id="@+id/ament6"
+                android:layout_column="1" />
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
