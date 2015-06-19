@@ -27,14 +27,60 @@
             android:showWeekNumber="false" />
     </FrameLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/date"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/frameLayout"
         android:layout_alignStart="@+id/frameLayout"
-        android:layout_marginTop="133dp" />
+        android:layout_marginBottom="250dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Yestorday"
+            android:id="@+id/date"
+            android:layout_alignTop="@+id/frameLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Today"
+            android:id="@+id/today"
+            android:layout_gravity="center_horizontal|top" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Tomorrow"
+            android:id="@+id/tomorrow"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="25dp" />
+
+        <ListView
+            android:layout_width="160dp"
+            android:layout_height="200dp"
+            android:id="@+id/listYes"
+            android:layout_gravity="center_vertical" />
+
+        <ListView
+            android:layout_width="160dp"
+            android:layout_height="200dp"
+            android:id="@+id/listTo"
+            android:layout_gravity="center" />
+
+        <ListView
+            android:layout_width="160dp"
+            android:layout_height="200dp"
+            android:id="@+id/listTom"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
 </RelativeLayout>
