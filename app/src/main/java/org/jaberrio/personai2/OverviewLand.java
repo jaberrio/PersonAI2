@@ -57,8 +57,8 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         ament2.setBackgroundColor(Color.rgb(255, 102, 255));
         ament4.setBackgroundColor(Color.rgb(102, 0, 204));
         ament7.setBackgroundColor(Color.rgb(255, 102, 255));
-        ament5.setBackgroundColor(Color.rgb(102, 0, 204));
-        ament6.setBackgroundColor(Color.rgb(255, 102, 255));
+        ament6.setBackgroundColor(Color.rgb(102, 0, 204));
+        ament5.setBackgroundColor(Color.rgb(255, 102, 255));
 
         cV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
