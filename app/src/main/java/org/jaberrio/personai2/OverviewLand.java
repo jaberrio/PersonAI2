@@ -2,6 +2,7 @@ package org.jaberrio.personai2;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -12,7 +13,6 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +50,16 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         ament5.setOnClickListener(this);
         ament6.setOnClickListener(this);
         ament7.setOnClickListener(this);
-//
+
+        ament0.setBackgroundColor(Color.rgb(102, 0, 204));
+        ament1.setBackgroundColor(Color.rgb(255, 102, 255));
+        ament3.setBackgroundColor(Color.rgb(102, 0, 204));
+        ament2.setBackgroundColor(Color.rgb(255, 102, 255));
+        ament4.setBackgroundColor(Color.rgb(102, 0, 204));
+        ament7.setBackgroundColor(Color.rgb(255, 102, 255));
+        ament5.setBackgroundColor(Color.rgb(102, 0, 204));
+        ament6.setBackgroundColor(Color.rgb(255, 102, 255));
+
         cV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -75,8 +84,12 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         listAdapter.add("Makemake" );
         listAdapter.add( "Eris" );
 
+
+        mainListView.setBackgroundColor(Color.rgb(255,102,255));
+
         // Set the ArrayAdapter as the ListView's adapter.
         mainListView.setAdapter(listAdapter);
+
 
         return view;
     }
@@ -90,8 +103,6 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         DataBaseManager db = new DataBaseManager();
         db.writeData(context,"Obama");
 
-        Toast finishedLoad = Toast.makeText(context, db.readSavedData(context) , Toast.LENGTH_SHORT);
-        finishedLoad.show();
 
     }
 }
