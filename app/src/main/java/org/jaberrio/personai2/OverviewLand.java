@@ -79,6 +79,7 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        DataBaseManager db = new DataBaseManager();
+        db.setDataBase(getActivity().getApplicationContext());
     }
 }
