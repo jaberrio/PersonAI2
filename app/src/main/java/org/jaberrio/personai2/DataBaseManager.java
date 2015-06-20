@@ -3,26 +3,46 @@ package org.jaberrio.personai2;
 
 import android.content.Context;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class DataBaseManager {
 
-    String filename = "myfile";
-    String string = "Hello world!";
-    FileOutputStream outputStream;
 
-    public void setDataBase(Context context) {
-
-        String filename = "CoolFile";
-        String string = "Obama";
-
+    public void writeData (Context context,String data) {
         try {
-            outputStream = context.openFileOutput(filename, Context.MODE_PRIVATE);
-            outputStream.write(string.getBytes());
-            outputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+            FileOutputStream fOut = context.openFileOutput("data.dat", Context.MODE_PRIVATE) ;
+            OutputStreamWriter osw = new OutputStreamWriter ( fOut ) ;
+            osw.write ( data ) ;
+            osw.flush ( ) ;
+            osw.close ( ) ;
+        } catch ( Exception e ) {
+            e.printStackTrace ( ) ;
         }
+    }
 
+    public String readSavedData (Context context) {
+        StringBuilder datax = new StringBuilder("");
+        try {
+            FileInputStream fInStream = context.openFileInput("data.dat") ;
+            InputStreamReader isr = new InputStreamReader ( fInStream ) ;
+            BufferedReader buffreader = new BufferedReader ( isr ) ;
+
+            String readString = buffreader.readLine ( ) ;
+            while ( readString != null ) {
+                datax.append(readString);
+                readString = buffreader.readLine ( ) ;
+            }
+
+            isr.close ( ) ;
+        } catch ( IOException ioe ) {
+            ioe.printStackTrace ( ) ;
+        }
+        return datax.toString() ;
     }
 }
+

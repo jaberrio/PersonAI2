@@ -1,6 +1,7 @@
 package org.jaberrio.personai2;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,11 +12,13 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class OverviewLand extends Fragment implements View.OnClickListener {
+
 
     @Nullable
     @Override
@@ -30,6 +33,8 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         final Button ament5 = (Button)view.findViewById(R.id.ament5);
         final Button ament6 = (Button)view.findViewById(R.id.ament6);
         final Button ament7 = (Button)view.findViewById(R.id.ament7);
+
+        Context context = getActivity().getApplicationContext();
 
         ListView mainListView ;
         ArrayAdapter<String> listAdapter ;
@@ -61,7 +66,7 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         planetList.addAll( Arrays.asList(planets) );
 
         // Create ArrayAdapter using the planet list.
-        listAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_today, planetList);
+        listAdapter = new ArrayAdapter<String>(context, R.layout.list_today, planetList);
 
         // Add more planets.
         listAdapter.add( "This is a really long text field to prove the concept of of multi line things" );
@@ -79,7 +84,14 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
+        Context context = getActivity().getApplicationContext();
+
         DataBaseManager db = new DataBaseManager();
-        db.setDataBase(getActivity().getApplicationContext());
+        db.writeData(context,"Obama");
+
+        Toast finishedLoad = Toast.makeText(context, db.readSavedData(context) , Toast.LENGTH_SHORT);
+        finishedLoad.show();
+
     }
 }
