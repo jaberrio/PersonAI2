@@ -1,6 +1,8 @@
 package org.jaberrio.personai2;
 
 
+
+
 import android.content.Context;
 
 import java.io.BufferedReader;
@@ -13,16 +15,22 @@ import java.io.OutputStreamWriter;
 public class DataBaseManager {
 
 
-    public void writeData (Context context,String data) {
+    public void writeData (Context context,String[] data) {
         try {
             FileOutputStream fOut = context.openFileOutput("data.dat", Context.MODE_PRIVATE) ;
             OutputStreamWriter osw = new OutputStreamWriter ( fOut ) ;
-            osw.write ( data ) ;
-            osw.flush ( ) ;
-            osw.close ( ) ;
+
+            for (int i = 0; i < data.length; i++){
+                osw.append(data[i]);
+            }
+
+            osw.flush () ;
+            osw.close () ;
         } catch ( Exception e ) {
             e.printStackTrace ( ) ;
         }
+
+
     }
 
     public String readSavedData (Context context) {
@@ -34,6 +42,7 @@ public class DataBaseManager {
 
             String readString = buffreader.readLine ( ) ;
             while ( readString != null ) {
+                datax.append("\n");
                 datax.append(readString);
                 readString = buffreader.readLine ( ) ;
             }

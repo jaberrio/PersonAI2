@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +36,7 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         final Button ament7 = (Button)view.findViewById(R.id.ament7);
 
         Context context = getActivity().getApplicationContext();
+        DataBaseManager db = new DataBaseManager();
 
         ListView mainListView ;
         ArrayAdapter<String> listAdapter ;
@@ -56,8 +58,8 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         ament3.setBackgroundColor(Color.rgb(102, 0, 204));
         ament2.setBackgroundColor(Color.rgb(255, 102, 255));
         ament4.setBackgroundColor(Color.rgb(102, 0, 204));
-        ament7.setBackgroundColor(Color.rgb(255, 102, 255));
-        ament6.setBackgroundColor(Color.rgb(102, 0, 204));
+        ament6.setBackgroundColor(Color.rgb(255, 102, 255));
+        ament7.setBackgroundColor(Color.rgb(102, 0, 204));
         ament5.setBackgroundColor(Color.rgb(255, 102, 255));
 
         cV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -81,11 +83,11 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         listAdapter.add( "This is a really long text field to prove the concept of of multi line things" );
         listAdapter.add( "Pluto" );
         listAdapter.add("Haumea" );
-        listAdapter.add("Makemake" );
-        listAdapter.add( "Eris" );
+        listAdapter.add("Makemake" + "\n" + "Cool" );
+        listAdapter.add(db.readSavedData(context));
 
 
-        mainListView.setBackgroundColor(Color.rgb(255,102,255));
+        mainListView.setBackgroundColor(Color.BLACK);
 
         // Set the ArrayAdapter as the ListView's adapter.
         mainListView.setAdapter(listAdapter);
@@ -98,11 +100,19 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+        String[] data = new String[100];
+
+        for (int i = 0; i < data.length; i = i+2){
+            data[i] = "Obama: " + String.valueOf(i);
+        }
+
         Context context = getActivity().getApplicationContext();
 
         DataBaseManager db = new DataBaseManager();
-        db.writeData(context,"Obama");
+        db.writeData(context,data);
 
+        Toast finishedLoad = Toast.makeText(context, "Done Writing Information", Toast.LENGTH_SHORT);
+        finishedLoad.show();
 
     }
 }

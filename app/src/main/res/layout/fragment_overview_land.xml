@@ -73,9 +73,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/frameLayout2"
         android:layout_toStartOf="@+id/frameLayout2"
-        android:layout_marginRight="302dp">
+        android:layout_marginRight="300dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -148,7 +147,7 @@
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
-                android:layout_height="116dp"
+                android:layout_height="118dp"
                 android:text="New Button"
                 android:id="@+id/ament6"
                 android:layout_column="0" />
@@ -156,7 +155,7 @@
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
-                android:layout_height="116dp"
+                android:layout_height="118dp"
                 android:text="New Button"
                 android:id="@+id/ament7"
                 android:layout_column="1" />
@@ -172,7 +171,7 @@
         android:layout_marginLeft="200dp">
 
         <ListView
-            android:layout_width="match_parent"
+            android:layout_width="297dp"
             android:layout_height="match_parent"
             android:id="@+id/listTo"
             android:layout_gravity="center"

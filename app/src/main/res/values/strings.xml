@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PersonAI2</string>
+    <string name="app_name">PersonAI</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
