@@ -100,11 +100,15 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        String[] data = new String[100];
+        String[] data = new String[10];
 
-        for (int i = 0; i < data.length; i = i+2){
-            data[i] = "Obama: " + String.valueOf(i);
-        }
+        data[0] = String.valueOf(System.currentTimeMillis());
+        data[1] = "Math Project Textbook";
+        data[2] = String.valueOf(System.currentTimeMillis() + 432000);
+        data[3] = "Math";
+        data[4] = "7th";
+        data[5] = "This is my first assigment";
+        data[6] = null;
 
         Context context = getActivity().getApplicationContext();
 
