@@ -21,6 +21,7 @@ import java.util.Arrays;
 
 public class OverviewLand extends Fragment implements View.OnClickListener {
 
+    String currentDateSelected;
 
     @Nullable
     @Override
@@ -62,22 +63,22 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         cV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-            Calendar rightNow = Calendar.getInstance();
-            date.setText(String.valueOf(year) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(dayOfMonth)
-                + "\n" + rightNow.get(Calendar.YEAR) + "/"
-                + rightNow.get(Calendar.MONTH) + "/"
-                + rightNow.get(Calendar.DAY_OF_MONTH));
+
+            date.setText(String.valueOf(year) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(dayOfMonth));
+
+                currentDateSelected = String.valueOf(year) + "_" + String.valueOf(month) + "_" + String.valueOf(dayOfMonth) + ".dat";
 
                 Refresh refresh = new Refresh();
-                refresh.listDisplayRrefesh(viewRoot, context);
+                refresh.listDisplayRrefesh(viewRoot, context,currentDateSelected);
             }
         });
-
         return viewRoot;
     }
 
     @Override
     public void onClick(View v) {
+
+        Calendar rightNow = Calendar.getInstance();
 
         String[] data = new String[7];
 
@@ -92,7 +93,9 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         Context context = getActivity().getApplicationContext();
 
         DataBaseManager db = new DataBaseManager();
-        db.writeData(context, data, "data.dat");
+        db.writeData(context, data,
+                //FILE NAME
+                String.valueOf(currentDateSelected));
 
         Toast finishedLoad = Toast.makeText(context, "Done Writing Information", Toast.LENGTH_SHORT);
         finishedLoad.show();

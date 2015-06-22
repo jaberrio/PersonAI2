@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 public class Refresh {
 
-    public void listDisplayRrefesh(View view,Context context){
+
+    public void listDisplayRrefesh(View view,Context context,String date){
 
         DataBaseManager db = new DataBaseManager();
 
@@ -29,9 +30,7 @@ public class Refresh {
         listAdapter.add( "Pluto" );
         listAdapter.add("Haumea" );
         listAdapter.add("Makemake" + "\n" + "Cool" );
-        listAdapter.add(db.readSavedData(context,"Obama"));
-
-
+        listAdapter.add(db.readSavedData(context,date));
 
         // Set the ArrayAdapter as the ListView's adapter.
         mainListView.setAdapter(listAdapter);
