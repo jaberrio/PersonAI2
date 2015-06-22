@@ -52,7 +52,7 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
                 currentDateSelected = String.valueOf(year) + "_" + String.valueOf(month) + "_" + String.valueOf(dayOfMonth) + ".dat";
 
                 RefreshListView refreshListView = new RefreshListView();
-                refreshListView.listDisplayRrefesh(viewRoot, context,currentDateSelected);
+                refreshListView.listDisplayRefresh(viewRoot, context, currentDateSelected);
             }
         });
         return viewRoot;
@@ -61,30 +61,67 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        Calendar rightNow = Calendar.getInstance();
+        //Periods are temperately hard coded
 
-        String[] data = new String[7];
+        switch (v.getId()){
+            case R.id.ament0:
 
-        data[0] = String.valueOf(System.currentTimeMillis());
-        data[1] = "Math Project Textbook";
-        data[2] = String.valueOf(System.currentTimeMillis() + 432000);
-        data[3] = "Math";
-        data[4] = "7th";
-        data[5] = "This is my first assigment";
-        data[6] = null;
+                break;
 
-        Context context = getActivity().getApplicationContext();
+            case R.id.ament1:
 
-        DataBaseManager db = new DataBaseManager();
-        db.writeData(context, data,
-                //FILE NAME
-                String.valueOf(currentDateSelected));
+                break;
 
-        Toast finishedLoad = Toast.makeText(context, "Done Writing Information", Toast.LENGTH_SHORT);
-        finishedLoad.show();
+            case R.id.ament2:
 
-        RefreshListView refreshListView = new RefreshListView();
-        refreshListView.listDisplayRrefesh(viewRoot, context, currentDateSelected);
+                break;
+
+            case R.id.ament3:
+
+                break;
+
+            case R.id.ament4:
+
+                break;
+
+            case R.id.ament5:
+
+                break;
+
+            case R.id.ament6:
+
+                break;
+
+            case R.id.ament7:
+
+                Calendar rightNow = Calendar.getInstance();
+
+                String[] data = new String[7];
+
+                data[0] = String.valueOf(System.currentTimeMillis());
+                data[1] = "Math Project Textbook";
+                data[2] = String.valueOf(System.currentTimeMillis() + 432000);
+                data[3] = "Math";
+                data[4] = "7th";
+                data[5] = "This is my first assigment";
+                data[6] = null;
+
+                Context context = getActivity().getApplicationContext();
+
+                DataBaseManager db = new DataBaseManager();
+                db.writeData(context, data,
+                        //FILE NAME
+                        String.valueOf(currentDateSelected));
+
+                Toast finishedLoad = Toast.makeText(context, "Done Writing Information", Toast.LENGTH_SHORT);
+                finishedLoad.show();
+
+                RefreshListView refreshListView = new RefreshListView();
+                refreshListView.listDisplayRefresh(viewRoot, context, currentDateSelected);
+
+                break;
+        }
+
 
     }
 }

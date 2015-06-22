@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class RefreshListView {
 
 
-    public void listDisplayRrefesh(View view,Context context,String date){
+    public void listDisplayRefresh(View view, Context context, String date){
 
         DataBaseManager db = new DataBaseManager();
 
