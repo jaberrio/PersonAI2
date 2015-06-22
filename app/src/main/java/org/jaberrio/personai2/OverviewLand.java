@@ -14,6 +14,7 @@ import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Calendar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,25 +25,21 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_overview_land, container, false);
+        final View viewRoot = inflater.inflate(R.layout.fragment_overview_land, container, false);
 
-        final Button ament0 = (Button)view.findViewById(R.id.ament0);
-        final Button ament1 = (Button)view.findViewById(R.id.ament1);
-        final Button ament2 = (Button)view.findViewById(R.id.ament2);
-        final Button ament3 = (Button)view.findViewById(R.id.ament3);
-        final Button ament4 = (Button)view.findViewById(R.id.ament4);
-        final Button ament5 = (Button)view.findViewById(R.id.ament5);
-        final Button ament6 = (Button)view.findViewById(R.id.ament6);
-        final Button ament7 = (Button)view.findViewById(R.id.ament7);
+        final Button ament0 = (Button)viewRoot.findViewById(R.id.ament0);
+        final Button ament1 = (Button)viewRoot.findViewById(R.id.ament1);
+        final Button ament2 = (Button)viewRoot.findViewById(R.id.ament2);
+        final Button ament3 = (Button)viewRoot.findViewById(R.id.ament3);
+        final Button ament4 = (Button)viewRoot.findViewById(R.id.ament4);
+        final Button ament5 = (Button)viewRoot.findViewById(R.id.ament5);
+        final Button ament6 = (Button)viewRoot.findViewById(R.id.ament6);
+        final Button ament7 = (Button)viewRoot.findViewById(R.id.ament7);
 
-        Context context = getActivity().getApplicationContext();
-        DataBaseManager db = new DataBaseManager();
+        CalendarView cV = (CalendarView)viewRoot.findViewById(R.id.calendarViewItem);
+        final TextView date = (TextView)viewRoot.findViewById(R.id.date);
 
-        ListView mainListView ;
-        ArrayAdapter<String> listAdapter ;
-
-        CalendarView cV = (CalendarView)view.findViewById(R.id.calendarViewItem);
-        final TextView date = (TextView)view.findViewById(R.id.date);
+        final Context context = getActivity().getApplicationContext();
 
         ament0.setOnClickListener(this);
         ament1.setOnClickListener(this);
@@ -65,42 +62,24 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         cV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                date.setText(String.valueOf(year) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(dayOfMonth));
+            Calendar rightNow = Calendar.getInstance();
+            date.setText(String.valueOf(year) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(dayOfMonth)
+                + "\n" + rightNow.get(Calendar.YEAR) + "/"
+                + rightNow.get(Calendar.MONTH) + "/"
+                + rightNow.get(Calendar.DAY_OF_MONTH));
+
+                Refresh refresh = new Refresh();
+                refresh.listDisplayRrefesh(viewRoot, context);
             }
         });
 
-        mainListView = (ListView)view.findViewById(R.id.listTo);
-
-        String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
-                "Jupiter", "Saturn", "Uranus", "Neptune"};
-        ArrayList<String> planetList = new ArrayList<String>();
-        planetList.addAll( Arrays.asList(planets) );
-
-        // Create ArrayAdapter using the planet list.
-        listAdapter = new ArrayAdapter<String>(context, R.layout.list_today, planetList);
-
-        // Add more planets.
-        listAdapter.add( "This is a really long text field to prove the concept of of multi line things" );
-        listAdapter.add( "Pluto" );
-        listAdapter.add("Haumea" );
-        listAdapter.add("Makemake" + "\n" + "Cool" );
-        listAdapter.add(db.readSavedData(context));
-
-
-        mainListView.setBackgroundColor(Color.BLACK);
-
-        // Set the ArrayAdapter as the ListView's adapter.
-        mainListView.setAdapter(listAdapter);
-
-
-        return view;
+        return viewRoot;
     }
-
 
     @Override
     public void onClick(View v) {
 
-        String[] data = new String[10];
+        String[] data = new String[7];
 
         data[0] = String.valueOf(System.currentTimeMillis());
         data[1] = "Math Project Textbook";
@@ -113,10 +92,12 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         Context context = getActivity().getApplicationContext();
 
         DataBaseManager db = new DataBaseManager();
-        db.writeData(context,data);
+        db.writeData(context, data, "data.dat");
 
         Toast finishedLoad = Toast.makeText(context, "Done Writing Information", Toast.LENGTH_SHORT);
         finishedLoad.show();
+
+
 
     }
 }

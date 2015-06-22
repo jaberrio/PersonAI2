@@ -84,7 +84,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="116dp"
-                android:text="New Button"
+                android:text="Period \n One"
                 android:id="@+id/ament0"
                 android:layout_column="0" />
 
@@ -92,7 +92,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="116dp"
-                android:text="New Button"
+                android:text="Period \n Two"
                 android:id="@+id/ament1"
                 android:layout_column="1" />
 
@@ -106,7 +106,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="116dp"
-                android:text="New Button"
+                android:text="Period \n Three"
                 android:id="@+id/ament2"
                 android:layout_column="0" />
 
@@ -114,7 +114,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="116dp"
-                android:text="New Button"
+                android:text="Period \n Four"
                 android:id="@+id/ament3"
                 android:layout_column="1" />
         </TableRow>
@@ -127,7 +127,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="116dp"
-                android:text="New Button"
+                android:text="Period \n Five"
                 android:id="@+id/ament4"
                 android:layout_column="0" />
 
@@ -135,9 +135,10 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="116dp"
-                android:text="New Button"
+                android:text="Period \n Six"
                 android:id="@+id/ament5"
                 android:layout_column="1" />
+
         </TableRow>
 
         <TableRow
@@ -148,7 +149,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="118dp"
-                android:text="New Button"
+                android:text="Period \n Seven"
                 android:id="@+id/ament6"
                 android:layout_column="0" />
 
@@ -156,7 +157,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="100dp"
                 android:layout_height="118dp"
-                android:text="New Button"
+                android:text="Period \n Eight"
                 android:id="@+id/ament7"
                 android:layout_column="1" />
         </TableRow>
@@ -171,9 +172,9 @@
         android:layout_marginLeft="200dp">
 
         <ListView
-            android:layout_width="297dp"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
-            android:id="@+id/listTo"
+            android:id="@+id/listEvents"
             android:layout_gravity="center"
             android:layout_column="2" />
     </FrameLayout>

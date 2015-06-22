@@ -15,9 +15,9 @@ import java.io.OutputStreamWriter;
 public class DataBaseManager {
 
 
-    public void writeData (Context context,String[] data) {
+    public void writeData (Context context,String[] data,String fileName) {
         try {
-            FileOutputStream fOut = context.openFileOutput("data.dat", Context.MODE_PRIVATE) ;
+            FileOutputStream fOut = context.openFileOutput(fileName, Context.MODE_PRIVATE) ;
             OutputStreamWriter osw = new OutputStreamWriter ( fOut ) ;
 
             for (int i = 0; i < data.length; i++){
@@ -28,24 +28,25 @@ public class DataBaseManager {
             osw.flush () ;
             osw.close () ;
         } catch ( Exception e ) {
-            e.printStackTrace ( ) ;
+            e.printStackTrace ();
         }
 
 
     }
 
-    public String readSavedData (Context context) {
+    public String readSavedData (Context context, String fileName) {
         StringBuilder datax = new StringBuilder("");
         try {
-            FileInputStream fInStream = context.openFileInput("data.dat") ;
-            InputStreamReader isr = new InputStreamReader ( fInStream ) ;
-            BufferedReader buffreader = new BufferedReader ( isr ) ;
+            FileInputStream fInStream = context.openFileInput(fileName);
+            InputStreamReader isr = new InputStreamReader (fInStream);
+            BufferedReader buffreader = new BufferedReader (isr);
 
-            String readString = buffreader.readLine ( ) ;
-            while ( readString != null ) {
-                datax.append("\n");
+            String readString = buffreader.readLine();
+            while (readString != null) {
+
                 datax.append(readString);
-                readString = buffreader.readLine ( ) ;
+                datax.append("\n");
+                readString = buffreader.readLine();
             }
 
             isr.close ( ) ;
