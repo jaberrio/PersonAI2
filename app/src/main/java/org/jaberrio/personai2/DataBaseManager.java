@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
 
 public class DataBaseManager {
 
@@ -42,11 +43,13 @@ public class DataBaseManager {
             BufferedReader buffreader = new BufferedReader (isr);
 
             String readString = buffreader.readLine();
+
             while (readString != null) {
 
-                datax.append(readString);
-                datax.append("\n");
-                readString = buffreader.readLine();
+            datax.append(readString);
+            datax.append("\n");
+            readString = buffreader.readLine();
+
             }
 
             isr.close ( ) ;

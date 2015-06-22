@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class Refresh {
+public class RefreshListView {
 
 
     public void listDisplayRrefesh(View view,Context context,String date){
