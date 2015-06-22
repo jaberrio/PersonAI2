@@ -22,6 +22,7 @@ public class DataBaseManager {
 
             for (int i = 0; i < data.length; i++){
                 osw.append(data[i]);
+                osw.append('\n');
             }
 
             osw.flush () ;
