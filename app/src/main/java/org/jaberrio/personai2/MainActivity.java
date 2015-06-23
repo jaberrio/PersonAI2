@@ -15,7 +15,6 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //setContentView(R.layout.activity_main); Hello
     }
 
@@ -32,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
 
         if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
 
+            setTitle("PersonAI");
             OverviewLand overviewLand = new OverviewLand();
             fmtrans.replace(android.R.id.content,overviewLand);
 
@@ -39,6 +39,7 @@ public class MainActivity extends ActionBarActivity {
 
             OverviewPort overviewport = new OverviewPort();
             fmtrans.replace(android.R.id.content,overviewport);
+            setTitle("PersonAI");
         }
 
         // Schedule for the replacement of the Fragment as soon as possible

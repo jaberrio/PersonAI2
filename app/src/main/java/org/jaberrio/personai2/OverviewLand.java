@@ -1,6 +1,8 @@
 package org.jaberrio.personai2;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -63,8 +65,16 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
 
         //Periods are temperately hard coded
 
+        FragmentManager fm = getFragmentManager();
+
+        FragmentTransaction fmtrans = fm.beginTransaction();
+
         switch (v.getId()){
             case R.id.ament0:
+
+                MathClassAddEvent mathClassAddEvent = new MathClassAddEvent();
+                fmtrans.replace(android.R.id.content, mathClassAddEvent);
+                fmtrans.commit();
 
                 break;
 
