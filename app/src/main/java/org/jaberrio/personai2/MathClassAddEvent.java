@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MathClassAddEvent extends Fragment {
 
@@ -21,15 +22,15 @@ public class MathClassAddEvent extends Fragment {
 
         getActivity().setTitle("Period One: Math");
 
-        final Button textBook = (Button)viewRoot.findViewById(R.id.textBook);
-        final Button workbook = (Button)viewRoot.findViewById(R.id.workBook);
-        final Button mathproblem = (Button)viewRoot.findViewById(R.id.mathProblem);
-        final Button addCustomFieldOne = (Button)viewRoot.findViewById(R.id.addCustomFieldOne);
-        final Button addCustomFieldTwo = (Button)viewRoot.findViewById(R.id.addCustomFieldTwo);
-        final Button other = (Button)viewRoot.findViewById(R.id.other);
-        final Button afterSchool = (Button)viewRoot.findViewById(R.id.afterSchool);
-        final Button reminder = (Button)viewRoot.findViewById(R.id.reminder);
-        final Button event = (Button)viewRoot.findViewById(R.id.event);
+        final ImageButton textBook = (ImageButton)viewRoot.findViewById(R.id.textBook);
+        final ImageButton workbook = (ImageButton)viewRoot.findViewById(R.id.workBook);
+        final ImageButton mathproblem = (ImageButton)viewRoot.findViewById(R.id.mathProblem);
+        final ImageButton addCustomFieldOne = (ImageButton)viewRoot.findViewById(R.id.addCustomFieldOne);
+        final ImageButton addCustomFieldTwo = (ImageButton)viewRoot.findViewById(R.id.addCustomFieldTwo);
+        final ImageButton other = (ImageButton)viewRoot.findViewById(R.id.other);
+        final ImageButton afterSchool = (ImageButton)viewRoot.findViewById(R.id.afterSchool);
+        final ImageButton reminder = (ImageButton)viewRoot.findViewById(R.id.reminder);
+        final ImageButton event = (ImageButton)viewRoot.findViewById(R.id.event);
 
         View.OnClickListener oStartListener = new View.OnClickListener() {
             public void onClick(View v) {

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Calendar;
@@ -26,14 +27,14 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewRoot = inflater.inflate(R.layout.fragment_overview_land, container, false);
 
-        final Button ament0 = (Button)viewRoot.findViewById(R.id.ament0);
-        final Button ament1 = (Button)viewRoot.findViewById(R.id.ament1);
-        final Button ament2 = (Button)viewRoot.findViewById(R.id.ament2);
-        final Button ament3 = (Button)viewRoot.findViewById(R.id.ament3);
-        final Button ament4 = (Button)viewRoot.findViewById(R.id.ament4);
-        final Button ament5 = (Button)viewRoot.findViewById(R.id.ament5);
-        final Button ament6 = (Button)viewRoot.findViewById(R.id.ament6);
-        final Button ament7 = (Button)viewRoot.findViewById(R.id.ament7);
+        final ImageButton ament0 = (ImageButton)viewRoot.findViewById(R.id.ament0);
+        final ImageButton ament1 = (ImageButton)viewRoot.findViewById(R.id.ament1);
+        final ImageButton ament2 = (ImageButton)viewRoot.findViewById(R.id.ament2);
+        final ImageButton ament3 = (ImageButton)viewRoot.findViewById(R.id.ament3);
+        final ImageButton ament4 = (ImageButton)viewRoot.findViewById(R.id.ament4);
+        final ImageButton ament5 = (ImageButton)viewRoot.findViewById(R.id.ament5);
+        final ImageButton ament6 = (ImageButton)viewRoot.findViewById(R.id.ament6);
+        final ImageButton ament7 = (ImageButton)viewRoot.findViewById(R.id.ament7);
         ament0.setOnClickListener(this);
         ament1.setOnClickListener(this);
         ament2.setOnClickListener(this);
@@ -50,14 +51,14 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
 
 
 
-        ament0.setBackgroundColor(Color.rgb(102, 0, 204));
-        ament1.setBackgroundColor(Color.rgb(255, 102, 255));
-        ament3.setBackgroundColor(Color.rgb(102, 0, 204));
-        ament2.setBackgroundColor(Color.rgb(255, 102, 255));
-        ament4.setBackgroundColor(Color.rgb(102, 0, 204));
-        ament6.setBackgroundColor(Color.rgb(255, 102, 255));
-        ament7.setBackgroundColor(Color.rgb(102, 0, 204));
-        ament5.setBackgroundColor(Color.rgb(255, 102, 255));
+        //ament0.setBackgroundColor(Color.rgb(102, 0, 204));
+        //ament1.setBackgroundColor(Color.rgb(255, 102, 255));
+        //ament3.setBackgroundColor(Color.rgb(102, 0, 204));
+        //ament2.setBackgroundColor(Color.rgb(255, 102, 255));
+        //ament4.setBackgroundColor(Color.rgb(102, 0, 204));
+        //ament6.setBackgroundColor(Color.rgb(255, 102, 255));
+        //ament7.setBackgroundColor(Color.rgb(102, 0, 204));
+        //ament5.setBackgroundColor(Color.rgb(255, 102, 255));
 
         cV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override

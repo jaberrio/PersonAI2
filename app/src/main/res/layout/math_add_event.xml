@@ -3,66 +3,75 @@
     android:layout_height="match_parent" tools:context="org.jaberrio.personai2.MathClassAddEvent">
 
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="TextBook"
         android:id="@+id/textBook"
-        android:layout_gravity="left|top" />
+        android:layout_gravity="left|top"
+        android:background="@drawable/a1"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Add Custom Field"
         android:id="@+id/addCustomFieldOne"
-        android:layout_gravity="center_horizontal|top" />
+        android:layout_gravity="center_horizontal|top"
+        android:background="@drawable/a2"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="After School"
         android:id="@+id/afterSchool"
-        android:layout_gravity="right|top" />
+        android:layout_gravity="right|top"
+        android:background="@drawable/a3"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Add Custom Field"
         android:id="@+id/addCustomFieldTwo"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="@drawable/a4"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Other"
         android:id="@+id/other"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@drawable/a5"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="WorkBook"
         android:id="@+id/workBook"
-        android:layout_gravity="left|center_vertical" />
+        android:layout_gravity="left|center_vertical"
+        android:background="@drawable/a6" />
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Reminder"
         android:id="@+id/reminder"
-        android:layout_gravity="right|center_vertical" />
+        android:layout_gravity="right|center_vertical"
+        android:background="@drawable/a7"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Math Problem"
         android:id="@+id/mathProblem"
-        android:layout_gravity="left|bottom" />
+        android:layout_gravity="left|bottom"
+        android:background="@drawable/a8"/>
 
-    <Button
+    <ImageButton
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Event"
         android:id="@+id/event"
-        android:layout_gravity="right|bottom" />
+        android:layout_gravity="right|bottom"
+        android:background="@drawable/a9"/>
 </FrameLayout>
