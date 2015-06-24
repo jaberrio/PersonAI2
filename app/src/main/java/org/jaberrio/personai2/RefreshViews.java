@@ -1,13 +1,13 @@
 package org.jaberrio.personai2;
 
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+        import android.content.Context;
+        import android.view.View;
+        import android.widget.ArrayAdapter;
+        import android.widget.ListView;
+        import android.widget.TextView;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 public class RefreshViews {
 
@@ -41,10 +41,10 @@ public class RefreshViews {
 
 
         TextView dueDate = (TextView)view.getRootView().findViewById(R.id.dueDate);
-        TextView period = (TextView)view.getRootView().findViewById(R.id.period);
+        TextView periodText = (TextView)view.getRootView().findViewById(R.id.periodText);
 
         DataBaseManager dataBaseManager = new DataBaseManager();
-        period.setText(dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PERIOD,context));
+        periodText.setText("Period: " + dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PERIOD,context));
         dueDate.setText(dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.DUE_DATE,context));
 
 

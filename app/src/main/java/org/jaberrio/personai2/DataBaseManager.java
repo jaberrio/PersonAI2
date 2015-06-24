@@ -84,6 +84,21 @@ public class DataBaseManager {
                 }
 
                 break;
+
+            case PERIOD:
+                try {
+                    FileOutputStream fOut = context.openFileOutput("PERIOD", Context.MODE_PRIVATE) ;
+                    OutputStreamWriter osw = new OutputStreamWriter ( fOut ) ;
+
+                    osw.append(Data);
+
+                    osw.flush () ;
+                    osw.close () ;
+                } catch ( Exception e ) {
+                    e.printStackTrace ();
+                }
+
+                break;
         }
 
     }
@@ -106,6 +121,19 @@ public class DataBaseManager {
                     ioe.printStackTrace ( ) ;
                 }
 
+                break;
+
+            case PERIOD:
+                try {
+                    FileInputStream fInStream = context.openFileInput("PERIOD");
+                    InputStreamReader isr = new InputStreamReader (fInStream);
+                    BufferedReader buffreader = new BufferedReader (isr);
+                    String readString = buffreader.readLine();
+                    datax.append(readString);
+                    isr.close ( ) ;
+                } catch ( IOException ioe ) {
+                    ioe.printStackTrace ( ) ;
+                }
                 break;
         }
 
