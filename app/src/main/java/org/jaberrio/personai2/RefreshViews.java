@@ -5,10 +5,11 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class RefreshListView {
+public class RefreshViews {
 
 
     public void listDisplayRefresh(View view, Context context, String date){
@@ -35,4 +36,19 @@ public class RefreshListView {
         // Set the ArrayAdapter as the ListView's adapter.
         mainListView.setAdapter(listAdapter);
     }
+
+    public void infoRefresh(View view,Context context){
+
+
+        TextView dueDate = (TextView)view.getRootView().findViewById(R.id.dueDate);
+        TextView period = (TextView)view.getRootView().findViewById(R.id.period);
+
+        DataBaseManager dataBaseManager = new DataBaseManager();
+        period.setText(dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PERIOD,context));
+        dueDate.setText(dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.DUE_DATE,context));
+
+
+    }
 }
+
+

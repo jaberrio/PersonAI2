@@ -1,5 +1,6 @@
 package org.jaberrio.personai2;
 
+import android.app.DialogFragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
@@ -7,10 +8,14 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends ActionBarActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,5 +72,25 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void showTimePickerDialog(View v) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
+    }
+
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getFragmentManager(), "datePicker");
+
+        RefreshViews refreshViews = new RefreshViews();
+        refreshViews.infoRefresh(v.getRootView(),getApplicationContext());
+
+    }
+
+    public void refresh(View v){
+        RefreshViews refreshViews = new RefreshViews();
+        refreshViews.infoRefresh(v.getRootView(),getApplicationContext());
     }
 }

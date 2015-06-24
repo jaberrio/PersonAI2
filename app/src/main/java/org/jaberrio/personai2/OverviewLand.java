@@ -26,8 +26,22 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewRoot = inflater.inflate(R.layout.fragment_overview_land, container, false);
 
-        final Button ament0 = (Button)viewRoot.findViewById(R.id.ament0);final Button ament1 = (Button)viewRoot.findViewById(R.id.ament1);final Button ament2 = (Button)viewRoot.findViewById(R.id.ament2);final Button ament3 = (Button)viewRoot.findViewById(R.id.ament3);final Button ament4 = (Button)viewRoot.findViewById(R.id.ament4);final Button ament5 = (Button)viewRoot.findViewById(R.id.ament5);final Button ament6 = (Button)viewRoot.findViewById(R.id.ament6);final Button ament7 = (Button)viewRoot.findViewById(R.id.ament7);
-        ament0.setOnClickListener(this);ament1.setOnClickListener(this);ament2.setOnClickListener(this);ament3.setOnClickListener(this);ament4.setOnClickListener(this);ament5.setOnClickListener(this);ament6.setOnClickListener(this);ament7.setOnClickListener(this);
+        final Button ament0 = (Button)viewRoot.findViewById(R.id.ament0);
+        final Button ament1 = (Button)viewRoot.findViewById(R.id.ament1);
+        final Button ament2 = (Button)viewRoot.findViewById(R.id.ament2);
+        final Button ament3 = (Button)viewRoot.findViewById(R.id.ament3);
+        final Button ament4 = (Button)viewRoot.findViewById(R.id.ament4);
+        final Button ament5 = (Button)viewRoot.findViewById(R.id.ament5);
+        final Button ament6 = (Button)viewRoot.findViewById(R.id.ament6);
+        final Button ament7 = (Button)viewRoot.findViewById(R.id.ament7);
+        ament0.setOnClickListener(this);
+        ament1.setOnClickListener(this);
+        ament2.setOnClickListener(this);
+        ament3.setOnClickListener(this);
+        ament4.setOnClickListener(this);
+        ament5.setOnClickListener(this);
+        ament6.setOnClickListener(this);
+        ament7.setOnClickListener(this);
 
         CalendarView cV = (CalendarView)viewRoot.findViewById(R.id.calendarViewItem);
         final TextView date = (TextView)viewRoot.findViewById(R.id.date);
@@ -53,8 +67,8 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
 
                 currentDateSelected = String.valueOf(year) + "_" + String.valueOf(month) + "_" + String.valueOf(dayOfMonth) + ".dat";
 
-                RefreshListView refreshListView = new RefreshListView();
-                refreshListView.listDisplayRefresh(viewRoot, context, currentDateSelected);
+                RefreshViews refreshViews = new RefreshViews();
+                refreshViews.listDisplayRefresh(viewRoot, context, currentDateSelected);
             }
         });
         return viewRoot;
@@ -126,8 +140,8 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
                 Toast finishedLoad = Toast.makeText(context, "Done Writing Information", Toast.LENGTH_SHORT);
                 finishedLoad.show();
 
-                RefreshListView refreshListView = new RefreshListView();
-                refreshListView.listDisplayRefresh(viewRoot, context, currentDateSelected);
+                RefreshViews refreshViews = new RefreshViews();
+                refreshViews.listDisplayRefresh(viewRoot, context, currentDateSelected);
 
                 break;
         }

@@ -15,6 +15,14 @@ import java.text.SimpleDateFormat;
 
 public class DataBaseManager {
 
+    enum FieldTypes{
+        DUE_DATE,
+        ASSIGNMENT,
+        SUBJECT,
+        PERIOD,
+        NOTES,
+        PICTURE_LOCATION
+    }
 
     public void writeData (Context context,String[] data,String fileName) {
         try {
@@ -57,6 +65,51 @@ public class DataBaseManager {
             ioe.printStackTrace ( ) ;
         }
         return datax.toString() ;
+    }
+
+    public void tempSaveCurrentEvent(FieldTypes val, String Data, Context context){
+
+        switch (val){
+            case DUE_DATE:
+                try {
+                    FileOutputStream fOut = context.openFileOutput("DUE_DATE", Context.MODE_PRIVATE) ;
+                    OutputStreamWriter osw = new OutputStreamWriter ( fOut ) ;
+
+                    osw.append(Data);
+
+                    osw.flush () ;
+                    osw.close () ;
+                } catch ( Exception e ) {
+                    e.printStackTrace ();
+                }
+
+                break;
+        }
+
+    }
+
+    public String tempGetCurrentEvent(FieldTypes val, Context context){
+
+        StringBuilder datax = new StringBuilder("");
+
+        switch (val){
+            case DUE_DATE:
+
+                try {
+                    FileInputStream fInStream = context.openFileInput("DUE_DATE");
+                    InputStreamReader isr = new InputStreamReader (fInStream);
+                    BufferedReader buffreader = new BufferedReader (isr);
+                    String readString = buffreader.readLine();
+                    datax.append(readString);
+                    isr.close ( ) ;
+                } catch ( IOException ioe ) {
+                    ioe.printStackTrace ( ) ;
+                }
+
+                break;
+        }
+
+        return datax.toString();
     }
 }
 
