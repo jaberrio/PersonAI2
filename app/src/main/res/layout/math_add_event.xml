@@ -9,15 +9,14 @@
         android:text="TextBook"
         android:id="@+id/textBook"
         android:layout_gravity="left|top"
-        android:background="@drawable/i"/>
+        android:background="@drawable/j"/>
 
-    <ImageButton
+    <Button
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Add Custom Field"
         android:id="@+id/addCustomFieldOne"
-        android:layout_gravity="center_horizontal|top"
-        android:background="@drawable/j"/>
+        android:layout_gravity="center_horizontal|top"/>
 
     <ImageButton
         android:layout_width="323dp"
@@ -25,15 +24,14 @@
         android:text="After School"
         android:id="@+id/afterSchool"
         android:layout_gravity="right|top"
-        android:background="@drawable/k"/>
+        android:background="@drawable/afterschool"/>
 
-    <ImageButton
+    <Button
         android:layout_width="323dp"
         android:layout_height="160dp"
         android:text="Add Custom Field"
         android:id="@+id/addCustomFieldTwo"
-        android:layout_gravity="center"
-        android:background="@drawable/l"/>
+        android:layout_gravity="center"/>
 
     <ImageButton
         android:layout_width="323dp"
@@ -41,7 +39,7 @@
         android:text="Other"
         android:id="@+id/other"
         android:layout_gravity="center_horizontal|bottom"
-        android:background="@drawable/m"/>
+        android:background="@drawable/other"/>
 
     <ImageButton
         android:layout_width="323dp"
@@ -49,7 +47,7 @@
         android:text="WorkBook"
         android:id="@+id/workBook"
         android:layout_gravity="left|center_vertical"
-        android:background="@drawable/n" />
+        android:background="@drawable/workbook" />
 
     <ImageButton
         android:layout_width="323dp"
@@ -57,7 +55,7 @@
         android:text="Reminder"
         android:id="@+id/reminder"
         android:layout_gravity="right|center_vertical"
-        android:background="@drawable/o"/>
+        android:background="@drawable/reminder"/>
 
     <ImageButton
         android:layout_width="323dp"
@@ -65,7 +63,7 @@
         android:text="Math Problem"
         android:id="@+id/mathProblem"
         android:layout_gravity="left|bottom"
-        android:background="@drawable/p"/>
+        android:background="@drawable/k"/>
 
     <ImageButton
         android:layout_width="323dp"
@@ -73,5 +71,5 @@
         android:text="Event"
         android:id="@+id/event"
         android:layout_gravity="right|bottom"
-        android:background="@drawable/q"/>
+        android:background="@drawable/o"/>
 </FrameLayout>

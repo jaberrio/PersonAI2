@@ -96,7 +96,7 @@
                 android:text="Period \n Two"
                 android:id="@+id/ament1"
                 android:layout_column="1"
-                android:background="@drawable/b"/>
+                android:background="@drawable/a3"/>
 
         </TableRow>
 

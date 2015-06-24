@@ -25,8 +25,8 @@ public class MathClassAddEvent extends Fragment {
         final ImageButton textBook = (ImageButton)viewRoot.findViewById(R.id.textBook);
         final ImageButton workbook = (ImageButton)viewRoot.findViewById(R.id.workBook);
         final ImageButton mathproblem = (ImageButton)viewRoot.findViewById(R.id.mathProblem);
-        final ImageButton addCustomFieldOne = (ImageButton)viewRoot.findViewById(R.id.addCustomFieldOne);
-        final ImageButton addCustomFieldTwo = (ImageButton)viewRoot.findViewById(R.id.addCustomFieldTwo);
+        final Button addCustomFieldOne = (Button)viewRoot.findViewById(R.id.addCustomFieldOne);
+        final Button addCustomFieldTwo = (Button)viewRoot.findViewById(R.id.addCustomFieldTwo);
         final ImageButton other = (ImageButton)viewRoot.findViewById(R.id.other);
         final ImageButton afterSchool = (ImageButton)viewRoot.findViewById(R.id.afterSchool);
         final ImageButton reminder = (ImageButton)viewRoot.findViewById(R.id.reminder);
