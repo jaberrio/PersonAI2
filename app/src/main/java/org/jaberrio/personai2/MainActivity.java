@@ -88,6 +88,13 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_prosssesing){
+
+            Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("processing.test.sketch_150625a");
+            startActivity(LaunchIntent);
+
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

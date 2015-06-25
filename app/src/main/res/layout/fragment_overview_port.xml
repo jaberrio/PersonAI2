@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_gravity="center"
-        android:background="@drawable/ico"/>
+        android:background="@drawable/iconforslap"/>
 
 </FrameLayout>
