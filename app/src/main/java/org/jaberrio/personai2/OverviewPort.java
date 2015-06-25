@@ -14,9 +14,12 @@ public class OverviewPort extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View viewRoot = inflater.inflate(R.layout.fragment_add_text_book_field, container, false);
+        View viewRoot = inflater.inflate(R.layout.fragment_overview_port, container, false);
+
+        viewRoot.setBackgroundColor(Color.rgb(255,155,93));
 
         return viewRoot;
+
     }
 
 
