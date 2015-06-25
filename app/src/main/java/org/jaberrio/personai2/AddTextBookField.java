@@ -24,6 +24,8 @@ public class AddTextBookField extends Fragment {
         final NumberPicker numberPicker = (NumberPicker)viewRoot.findViewById(R.id.numberPickerPeriod);
         final TextView periodText = (TextView)viewRoot.findViewById(R.id.periodText);
 
+        getActivity().setTitle("Period One: Math: Textbook");
+
         numberPicker.setMaxValue(8);
         numberPicker.setMinValue(1);
         numberPicker.setValue(1);

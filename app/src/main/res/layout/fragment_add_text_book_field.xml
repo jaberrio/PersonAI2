@@ -70,6 +70,14 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_gravity="center" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button"
+                android:layout_column="3"
+                android:onClick="nfc" />
+
         </TableRow>
 
         <TableRow
