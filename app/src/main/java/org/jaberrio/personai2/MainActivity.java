@@ -43,6 +43,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         handleIntent(getIntent());
+
     }
 
 
@@ -122,7 +123,16 @@ public class MainActivity extends ActionBarActivity {
         refreshViews.infoRefresh(v.getRootView(), getApplicationContext());
     }
 
-    public void nfc(View v) {
+    public void save(View v) {
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fmtrans = fm.beginTransaction();
+
+        OverviewLand overviewLand = new OverviewLand();
+        fmtrans.replace(android.R.id.content, overviewLand);
+
+        fmtrans.commit();
+
 
     }
 

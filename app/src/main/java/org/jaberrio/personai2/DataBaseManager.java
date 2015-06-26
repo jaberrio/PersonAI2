@@ -41,9 +41,13 @@ public class DataBaseManager {
             osw.flush();
             osw.close();
         } catch (Exception e) {
-            e.printStackTrace();
+             e.printStackTrace();
         }
 
+
+    }
+
+    public void writeDataMath(Context contexts, String[] data){
 
     }
 

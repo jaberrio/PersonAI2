@@ -71,11 +71,11 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:text="New Text"
+            android:layout_height="250dp"
+            android:text="Assignment: Return Tablet Phones To FAU\nDue Date: June, 26, 2015\nTeacher: Dr.Shankar\n Period: 7\nSubject: ESP\nNotes: You need to return the tablet or will your grade will be withheld from release"
             android:id="@+id/textView"
-            android:layout_gravity="bottom|center_horizontal"
-            android:gravity="center_vertical|center_horizontal" />
+            android:layout_gravity="center_horizontal|top"
+            android:gravity="center_vertical|center_horizontal|left" />
 
     </FrameLayout>
 

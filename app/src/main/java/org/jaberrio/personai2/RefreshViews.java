@@ -37,10 +37,10 @@ public class RefreshViews {
         listAdapter = new ArrayAdapter<String>(context, R.layout.list_today, planetList);
 
         // Add
-        listAdapter.add("This is a really long text field to prove the concept of of multi line things");
-        listAdapter.add("Pluto");
-        listAdapter.add("Haumea");
-        listAdapter.add("Makemake" + "\n" + "Cool");
+        listAdapter.add("Period: 1" + "\n" +"Assignment: Textbook Work" + "\n" + "Assigned: June, 5, 2015");
+        listAdapter.add("Period: 2" + "\n" +"Assignment: Write An Essay" + "\n" + "Assigned: June, 5, 2015");
+        listAdapter.add("Period: 3" + "\n" +"Assignment: Read Romeo And Juliet" + "\n" + "Assigned: June, 5, 2015");
+        listAdapter.add("Period: 4" + "\n" +"Assignment: Read About The Colombian Exchange" + "\n" + "Assigned: June, 5, 2015");
         listAdapter.add(db.readSavedData(context, date));
 
         // Set the ArrayAdapter as the ListView's adapter.

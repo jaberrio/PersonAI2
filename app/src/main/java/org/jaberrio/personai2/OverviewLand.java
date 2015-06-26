@@ -25,7 +25,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Calendar;
 
 public class OverviewLand extends Fragment implements View.OnClickListener {
@@ -69,10 +68,15 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         frameLayout.setBackgroundColor(Color.alpha(0));
         tableLayout.setBackgroundColor(Color.alpha(0));
         cV.setBackgroundColor(Color.alpha(0));
-        cV.setSelectedWeekBackgroundColor(Color.argb(110,95,95,95));
+        cV.setSelectedWeekBackgroundColor(Color.argb(110, 95, 95, 95));
 
         RefreshViews refreshViews = new RefreshViews();
         refreshViews.color(viewRoot);
+
+        Calendar calendar = Calendar.getInstance();
+        String rightnow = (String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)) + "_" +  String.valueOf(calendar.get(Calendar.MONTH))  + "_" + String.valueOf(calendar.get(Calendar.YEAR)) + ".dat");
+
+        refreshViews.listDisplayRefresh(viewRoot, context, rightnow);
 
         //ament0.setBackgroundColor(Color.rgb(102, 0, 204));
         //ament1.setBackgroundColor(Color.rgb(255, 102, 255));

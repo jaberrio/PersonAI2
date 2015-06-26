@@ -37,8 +37,13 @@ public class AddTextBookField extends Fragment {
 
         numberPicker.setMaxValue(5000);
         numberPicker.setMinValue(0);
-        if ((dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PAGE_NUMBER, getActivity().getApplicationContext())) != null) {
-            numberPicker.setValue(Integer.parseInt(dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PAGE_NUMBER, getActivity().getApplicationContext())));
+        try {
+
+            if ((dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PAGE_NUMBER, getActivity().getApplicationContext())) != null) {
+                numberPicker.setValue(Integer.parseInt(dataBaseManager.tempGetCurrentEvent(DataBaseManager.FieldTypes.PAGE_NUMBER, getActivity().getApplicationContext())));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
