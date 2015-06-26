@@ -2,45 +2,45 @@
 manifest
 ADDED from AndroidManifest.xml:1:1
 	package
-		ADDED from AndroidManifest.xml:1:120
+		ADDED from AndroidManifest.xml:1:1
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	android:versionName
-		ADDED from AndroidManifest.xml:1:94
+		ADDED from AndroidManifest.xml:3:5
 	android:versionCode
-		ADDED from AndroidManifest.xml:1:70
+		ADDED from AndroidManifest.xml:2:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	xmlns:android
 		ADDED from AndroidManifest.xml:1:11
 uses-sdk
-ADDED from AndroidManifest.xml:1:161
+ADDED from AndroidManifest.xml:5:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	android:minSdkVersion
-		ADDED from AndroidManifest.xml:1:171
+		ADDED from AndroidManifest.xml:5:15
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 application
-ADDED from AndroidManifest.xml:1:199
+ADDED from AndroidManifest.xml:6:5
 	android:label
-		ADDED from AndroidManifest.xml:1:268
+		ADDED from AndroidManifest.xml:8:9
 	android:debuggable
-		ADDED from AndroidManifest.xml:1:212
+		ADDED from AndroidManifest.xml:6:18
 	android:icon
-		ADDED from AndroidManifest.xml:1:238
-activity#processing.test.sketch_150625a.sketch_150625a
-ADDED from AndroidManifest.xml:1:299
+		ADDED from AndroidManifest.xml:7:9
+activity#     processing.test.sketch_150625a.sketch_150625a
+ADDED from AndroidManifest.xml:9:9
 	android:name
-		ADDED from AndroidManifest.xml:1:309
+		ADDED from AndroidManifest.xml:9:19
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:1:340
+ADDED from AndroidManifest.xml:10:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:1:355
+ADDED from AndroidManifest.xml:10:28
 	android:name
-		ADDED from AndroidManifest.xml:1:363
+		ADDED from AndroidManifest.xml:10:36
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:1:406
+ADDED from AndroidManifest.xml:11:17
 	android:name
-		ADDED from AndroidManifest.xml:1:416
+		ADDED from AndroidManifest.xml:11:27
