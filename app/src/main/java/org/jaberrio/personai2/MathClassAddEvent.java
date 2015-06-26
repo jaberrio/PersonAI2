@@ -1,3 +1,7 @@
+//This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+//        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+
 package org.jaberrio.personai2;
 
 import android.app.Fragment;
@@ -22,15 +26,15 @@ public class MathClassAddEvent extends Fragment {
 
         getActivity().setTitle("Period One: Math");
 
-        final ImageButton textBook = (ImageButton)viewRoot.findViewById(R.id.textBook);
-        final ImageButton workbook = (ImageButton)viewRoot.findViewById(R.id.workBook);
-        final ImageButton mathproblem = (ImageButton)viewRoot.findViewById(R.id.mathProblem);
-        final Button addCustomFieldOne = (Button)viewRoot.findViewById(R.id.addCustomFieldOne);
-        final Button addCustomFieldTwo = (Button)viewRoot.findViewById(R.id.addCustomFieldTwo);
-        final ImageButton other = (ImageButton)viewRoot.findViewById(R.id.other);
-        final ImageButton afterSchool = (ImageButton)viewRoot.findViewById(R.id.afterSchool);
-        final ImageButton reminder = (ImageButton)viewRoot.findViewById(R.id.reminder);
-        final ImageButton event = (ImageButton)viewRoot.findViewById(R.id.event);
+        final ImageButton textBook = (ImageButton) viewRoot.findViewById(R.id.textBook);
+        final ImageButton workbook = (ImageButton) viewRoot.findViewById(R.id.workBook);
+        final ImageButton mathproblem = (ImageButton) viewRoot.findViewById(R.id.mathProblem);
+        final Button addCustomFieldOne = (Button) viewRoot.findViewById(R.id.addCustomFieldOne);
+        final Button addCustomFieldTwo = (Button) viewRoot.findViewById(R.id.addCustomFieldTwo);
+        final ImageButton other = (ImageButton) viewRoot.findViewById(R.id.other);
+        final ImageButton afterSchool = (ImageButton) viewRoot.findViewById(R.id.afterSchool);
+        final ImageButton reminder = (ImageButton) viewRoot.findViewById(R.id.reminder);
+        final ImageButton event = (ImageButton) viewRoot.findViewById(R.id.event);
 
         View.OnClickListener oStartListener = new View.OnClickListener() {
             public void onClick(View v) {
@@ -38,7 +42,7 @@ public class MathClassAddEvent extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fmtrans = fm.beginTransaction();
 
-                switch (v.getId()){
+                switch (v.getId()) {
                     case R.id.textBook:
 
                         AddTextBookField addTextBookField = new AddTextBookField();
@@ -82,7 +86,7 @@ public class MathClassAddEvent extends Fragment {
         textBook.setOnClickListener(oStartListener);
         workbook.setOnClickListener(oStartListener);
         mathproblem.setOnClickListener(oStartListener);
-        addCustomFieldOne .setOnClickListener(oStartListener);
+        addCustomFieldOne.setOnClickListener(oStartListener);
         addCustomFieldTwo.setOnClickListener(oStartListener);
         other.setOnClickListener(oStartListener);
         afterSchool.setOnClickListener(oStartListener);

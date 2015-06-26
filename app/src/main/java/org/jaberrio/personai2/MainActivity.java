@@ -1,3 +1,6 @@
+//This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+//        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
 package org.jaberrio.personai2;
 
 import android.app.DialogFragment;
@@ -56,14 +59,14 @@ public class MainActivity extends ActionBarActivity {
 
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
-           setTitle("PersonAI");
-           OverviewLand overviewLand = new OverviewLand();
-           fmtrans.replace(android.R.id.content, overviewLand);
+            setTitle("PersonAI");
+            OverviewLand overviewLand = new OverviewLand();
+            fmtrans.replace(android.R.id.content, overviewLand);
 
         } else {
-           OverviewPort overviewport = new OverviewPort();
-           fmtrans.replace(android.R.id.content, overviewport);
-           setTitle("PersonAI");
+            OverviewPort overviewport = new OverviewPort();
+            fmtrans.replace(android.R.id.content, overviewport);
+            setTitle("PersonAI");
         }
 
         fmtrans.commit();
@@ -88,7 +91,7 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-        if (id == R.id.action_prosssesing){
+        if (id == R.id.action_prosssesing) {
 
             Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("processing.test.sketch_150625a");
             startActivity(LaunchIntent);
@@ -124,7 +127,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
     private void handleIntent(Intent intent) {
 
         String msg = null;
@@ -157,7 +159,7 @@ public class MainActivity extends ActionBarActivity {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction fmtrans = fm.beginTransaction();
 
-            switch (msg){
+            switch (msg) {
                 case "math":
                     AddTextBookField addTextBookField = new AddTextBookField();
                     fmtrans.replace(android.R.id.content, addTextBookField);
@@ -167,7 +169,7 @@ public class MainActivity extends ActionBarActivity {
 
                     break;
             }
-            Toast finishedLoad = Toast.makeText(getApplicationContext(), msg , Toast.LENGTH_SHORT);
+            Toast finishedLoad = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT);
             finishedLoad.show();
         } catch (Exception e) {
             e.printStackTrace();

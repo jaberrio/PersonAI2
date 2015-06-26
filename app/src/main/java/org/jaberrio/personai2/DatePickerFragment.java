@@ -1,3 +1,6 @@
+//This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+//        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
 package org.jaberrio.personai2;
 
 import android.app.DatePickerDialog;
@@ -33,7 +36,7 @@ public class DatePickerFragment extends DialogFragment
 
         DataBaseManager dataBaseManager = new DataBaseManager();
         String date = String.valueOf(month) + "/" + String.valueOf(day) + "/" + String.valueOf(year);
-        dataBaseManager.tempSaveCurrentEvent(DataBaseManager.FieldTypes.DUE_DATE,date, getActivity().getApplicationContext());
+        dataBaseManager.tempSaveCurrentEvent(DataBaseManager.FieldTypes.DUE_DATE, date, getActivity().getApplicationContext());
 
     }
 }

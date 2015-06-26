@@ -1,3 +1,7 @@
+//This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+//        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+
 package org.jaberrio.personai2;
 
 import android.app.Activity;
@@ -14,9 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.Calendar;
 
 public class OverviewLand extends Fragment implements View.OnClickListener {
@@ -29,14 +38,14 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewRoot = inflater.inflate(R.layout.fragment_overview_land, container, false);
 
-        final ImageButton ament0 = (ImageButton)viewRoot.findViewById(R.id.ament0);
-        final ImageButton ament1 = (ImageButton)viewRoot.findViewById(R.id.ament1);
-        final ImageButton ament2 = (ImageButton)viewRoot.findViewById(R.id.ament2);
-        final ImageButton ament3 = (ImageButton)viewRoot.findViewById(R.id.ament3);
-        final ImageButton ament4 = (ImageButton)viewRoot.findViewById(R.id.ament4);
-        final ImageButton ament5 = (ImageButton)viewRoot.findViewById(R.id.ament5);
-        final ImageButton ament6 = (ImageButton)viewRoot.findViewById(R.id.ament6);
-        final ImageButton ament7 = (ImageButton)viewRoot.findViewById(R.id.ament7);
+        final ImageButton ament0 = (ImageButton) viewRoot.findViewById(R.id.ament0);
+        final ImageButton ament1 = (ImageButton) viewRoot.findViewById(R.id.ament1);
+        final ImageButton ament2 = (ImageButton) viewRoot.findViewById(R.id.ament2);
+        final ImageButton ament3 = (ImageButton) viewRoot.findViewById(R.id.ament3);
+        final ImageButton ament4 = (ImageButton) viewRoot.findViewById(R.id.ament4);
+        final ImageButton ament5 = (ImageButton) viewRoot.findViewById(R.id.ament5);
+        final ImageButton ament6 = (ImageButton) viewRoot.findViewById(R.id.ament6);
+        final ImageButton ament7 = (ImageButton) viewRoot.findViewById(R.id.ament7);
         ament0.setOnClickListener(this);
         ament1.setOnClickListener(this);
         ament2.setOnClickListener(this);
@@ -46,12 +55,24 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
         ament6.setOnClickListener(this);
         ament7.setOnClickListener(this);
 
-        CalendarView cV = (CalendarView)viewRoot.findViewById(R.id.calendarViewItem);
-        final TextView date = (TextView)viewRoot.findViewById(R.id.date);
+        final TableLayout tableLayout = (TableLayout) viewRoot.findViewById(R.id.books);
+        final FrameLayout frameLayout = (FrameLayout) viewRoot.findViewById(R.id.frameLayout2);
+        CalendarView cV = (CalendarView) viewRoot.findViewById(R.id.calendarViewItem);
+        final TextView date = (TextView) viewRoot.findViewById(R.id.date);
+        final RelativeLayout relativeLayout = (RelativeLayout) viewRoot.findViewById(R.id.calandarView);
+
+        //relativeLayout.setBackgroundColor(Color.rgb(149, 57, 0));
+
 
         final Context context = getActivity().getApplicationContext();
 
+        frameLayout.setBackgroundColor(Color.alpha(0));
+        tableLayout.setBackgroundColor(Color.alpha(0));
+        cV.setBackgroundColor(Color.alpha(0));
+        cV.setSelectedWeekBackgroundColor(Color.argb(110,95,95,95));
 
+        RefreshViews refreshViews = new RefreshViews();
+        refreshViews.color(viewRoot);
 
         //ament0.setBackgroundColor(Color.rgb(102, 0, 204));
         //ament1.setBackgroundColor(Color.rgb(255, 102, 255));
@@ -66,7 +87,7 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
 
-            date.setText(String.valueOf(year) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(dayOfMonth));
+                date.setText(String.valueOf(year) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(dayOfMonth));
 
                 currentDateSelected = String.valueOf(year) + "_" + String.valueOf(month) + "_" + String.valueOf(dayOfMonth) + ".dat";
 
@@ -86,7 +107,7 @@ public class OverviewLand extends Fragment implements View.OnClickListener {
 
         FragmentTransaction fmtrans = fm.beginTransaction();
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.ament0:
 
                 MathClassAddEvent mathClassAddEvent = new MathClassAddEvent();
